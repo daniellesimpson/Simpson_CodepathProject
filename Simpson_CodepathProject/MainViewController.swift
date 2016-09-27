@@ -10,12 +10,68 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var myScrollView: UIScrollView!
+    
+    @IBOutlet weak var myFeedBtn: UIButton!
+    @IBOutlet weak var myPopcornBtn: UIButton!
+    @IBOutlet weak var myProfileBtn: UIButton!
+    
+    var feedVC: UIViewController!
+    var feedNav: UINavigationController!
+    
+    var popcornVC: UIViewController!
+    var popcornNav: UINavigationController!
+    
+    var myProfileVC: UIViewController!
+    var myProfileNav: UINavigationController!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        myScrollView.contentSize = CGSize(width: view.frame.size.width, height: view.frame.size.height)
+        
+        
+        
+        var myStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        feedVC = storyboard!.instantiateViewControllerWithIdentifier("feedVC")
+        feedNav = UINavigationController(rootViewController: feedVC)
+        
+        popcornVC = storyboard!.instantiateViewControllerWithIdentifier("popcornVC")
+        popcornNav = UINavigationController(rootViewController: popcornVC)
+        
+        myProfileVC = storyboard!.instantiateViewControllerWithIdentifier("myProfileVC")
+        myProfileNav = UINavigationController(rootViewController: myProfileVC)
+        
+         myScrollView.addSubview(feedNav.view)
 
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func didPressFeed(sender: AnyObject) {
+        myScrollView.addSubview(feedNav.view)
+        
+    }
+    
+    @IBAction func didPressPopcorn(sender: AnyObject) {
+        myScrollView.addSubview(popcornNav.view)
+    }
+    
+    @IBAction func didPressProfile(sender: AnyObject) {
+        myScrollView.addSubview(myProfileNav.view)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
