@@ -10,6 +10,7 @@ import UIKit
 
 class SearchCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var movieTitle: UILabel!
-    @IBOutlet weak var moviePoster: UIImageView!
+    @IBOutlet weak var movieTitleLabel: UILabel!
+    
+    @IBOutlet weak var searchMoviePoster: UIImageView!
 }

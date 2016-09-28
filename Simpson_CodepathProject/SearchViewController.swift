@@ -36,6 +36,11 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     var myMovies: [NSDictionary]! = []
     var results: [[String : AnyObject]] = []
     var originalTitle = "original_title"
+    var posterPath = "poster_path"
+    var moviePosterPath: String!
+    var imageUrl: NSURL!
+    var imageData: NSData!
+    
     
     
 
@@ -49,21 +54,27 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         navImageView.image = navImage
         navigationItem.titleView = navImageView
         
+        //setting up my collection view, and give the collectionView/cell background colors
         searchCollectionView.dataSource = self
         searchCollectionView.delegate = self
         searchCollectionView.backgroundColor = UIColorFromRGB(0xE2E3E4)
         SearchCollectionViewCell.appearance().backgroundColor = UIColorFromRGB(0xffffff)
         
+        //running the API
         let url = NSURL(string: "https://api.themoviedb.org/3/movie/popular?api_key=ced1b9e67f9f9c305424201cdfaa3532&language=en-US")
         let request = NSURLRequest(URL: url!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response:NSURLResponse?, data:NSData?, error:NSError?) in
             
             let myDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: [])
-            
             let dict = myDictionary as! [String : AnyObject]
             self.results = dict["results"] as! [[String : AnyObject]]
             
+
+            
+            
             self.searchCollectionView.reloadData()
+            
+            //print(myDictionary)
             
             
         }
@@ -84,8 +95,13 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         //print(movieNames)
         
-        cell.movieTitle.text = results[indexPath.row][originalTitle] as! String
-        //cell.moviePoster.image = myObjects[indexPath.row].image
+        cell.movieTitleLabel.text = results[indexPath.row][originalTitle] as! String
+        
+        self.moviePosterPath = results[indexPath.row][posterPath] as! String
+        self.imageUrl = NSURL(string: "https://image.tmdb.org/t/p/w500\(self.moviePosterPath)")
+        self.imageData = NSData(contentsOfURL: self.imageUrl)
+        
+        cell.searchMoviePoster.image = UIImage(data: imageData)
         
         return cell
     }

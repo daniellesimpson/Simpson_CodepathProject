@@ -34,7 +34,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cLa-OH-TNR">
-                                <rect key="frame" x="0.0" y="157" width="320" height="411"/>
+                                <rect key="frame" x="0.0" y="146" width="320" height="422"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BgO-qk-ywq">
                                     <size key="itemSize" width="280" height="79"/>
@@ -55,7 +55,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fGt-qJ-2rM">
-                                                    <rect key="frame" x="73" y="8" width="199" height="64"/>
+                                                    <rect key="frame" x="73" y="8" width="177" height="64"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -65,8 +65,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <outlet property="moviePoster" destination="Pdb-xe-bOD" id="7f4-xs-FR0"/>
-                                            <outlet property="movieTitle" destination="fGt-qJ-2rM" id="ZnE-H2-Nfm"/>
+                                            <outlet property="movieTitleLabel" destination="fGt-qJ-2rM" id="i6t-Vt-6XC"/>
+                                            <outlet property="searchMoviePoster" destination="Pdb-xe-bOD" id="EjO-ay-kah"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -210,7 +210,7 @@
                                         <rect key="frame" x="0.0" y="92" width="283" height="163"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dVe-i3-UGa" id="vjz-Co-Pqu">
-                                            <rect key="frame" x="0.0" y="0.0" width="283" height="162.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="283" height="163"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Interstellar-1" id="Q1T-fu-aLH" userLabel="movie_background">
