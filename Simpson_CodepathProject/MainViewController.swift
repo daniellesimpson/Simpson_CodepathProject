@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    @IBOutlet weak var myScrollView: UIScrollView!
+    @IBOutlet weak var myContainerView: UIView!
     
     @IBOutlet weak var myFeedBtn: UIButton!
     @IBOutlet weak var myPopcornBtn: UIButton!
@@ -30,7 +30,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myScrollView.contentSize = CGSize(width: view.frame.size.width, height: view.frame.size.height)
         
         
         
@@ -45,22 +44,23 @@ class MainViewController: UIViewController {
         myProfileVC = storyboard!.instantiateViewControllerWithIdentifier("myProfileVC")
         myProfileNav = UINavigationController(rootViewController: myProfileVC)
         
-         myScrollView.addSubview(feedNav.view)
+         myContainerView.addSubview(popcornNav.view)
+        
 
         // Do any additional setup after loading the view.
     }
 
     @IBAction func didPressFeed(sender: AnyObject) {
-        myScrollView.addSubview(feedNav.view)
+        myContainerView.addSubview(feedNav.view)
         
     }
     
     @IBAction func didPressPopcorn(sender: AnyObject) {
-        myScrollView.addSubview(popcornNav.view)
+        myContainerView.addSubview(popcornNav.view)
     }
     
     @IBAction func didPressProfile(sender: AnyObject) {
-        myScrollView.addSubview(myProfileNav.view)
+        myContainerView.addSubview(myProfileNav.view)
     }
     
     

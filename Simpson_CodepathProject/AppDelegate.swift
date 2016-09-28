@@ -16,10 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
+        var myNavigationBarAppearance = UINavigationBar.appearance()
+        //Background Color
         UINavigationBar.appearance().barTintColor = UIColorFromRGB(0xe53725)
+        //color of arrow/text
+        UINavigationBar.appearance().tintColor = UIColorFromRGB(0xffffff)
+        //Color of title
+        myNavigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColorFromRGB(0xffffff)]
+        
+//        let wordMark = UIImage(named: "wordMark.png")
+//        let imageView = UIImageView(image: wordMark)
+//        UINavigationBar.backgroundImageForBarPosition(imageView)
+//        UINavigationBar.backgroundImageForBarPosition(imageView)
+        
+        //let navBackgroundImage:UIImage! = UIImage(named: "wordMark.png")
+        //UINavigationBar.appearance().setBackgroundImage(navBackgroundImage, forBarMetrics: .Default)
+
+        
         
         return true
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {

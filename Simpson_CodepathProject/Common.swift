@@ -39,4 +39,3 @@ func UIColorFromRGB(rgbValue: UInt) -> UIColor {
     )
 }
 
-

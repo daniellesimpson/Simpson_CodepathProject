@@ -10,8 +10,12 @@
 		5E960C311D94820000D2B77D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E960C301D94820000D2B77D /* Common.swift */; };
 		5EA3D9B11D9A00A5008F3810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA3D9B01D9A00A5008F3810 /* Main.storyboard */; };
 		5EA3D9B31D9A014B008F3810 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3D9B21D9A014B008F3810 /* MainViewController.swift */; };
+		5EB45D611D9AE43F006B8453 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB45D601D9AE43F006B8453 /* FeedViewController.swift */; };
+		5EB45D631D9AE97D006B8453 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB45D621D9AE97D006B8453 /* SearchViewController.swift */; };
+		5EB45D651D9AE9C6006B8453 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB45D641D9AE9C6006B8453 /* ProfileViewController.swift */; };
+		5EB45D671D9AE9D8006B8453 /* MovieProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB45D661D9AE9D8006B8453 /* MovieProfileViewController.swift */; };
+		5ED301921D9C17A900260A23 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED301911D9C17A900260A23 /* SearchCollectionViewCell.swift */; };
 		5EFBBB3C1D947947002D2C7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFBBB3B1D947947002D2C7C /* AppDelegate.swift */; };
-		5EFBBB3E1D947947002D2C7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFBBB3D1D947947002D2C7C /* ViewController.swift */; };
 		5EFBBB431D947947002D2C7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EFBBB421D947947002D2C7C /* Assets.xcassets */; };
 		5EFBBB461D947947002D2C7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EFBBB441D947947002D2C7C /* LaunchScreen.storyboard */; };
 		5EFBBB511D947947002D2C7C /* Simpson_CodepathProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFBBB501D947947002D2C7C /* Simpson_CodepathProjectTests.swift */; };
@@ -39,9 +43,13 @@
 		5E960C301D94820000D2B77D /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		5EA3D9B01D9A00A5008F3810 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5EA3D9B21D9A014B008F3810 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5EB45D601D9AE43F006B8453 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		5EB45D621D9AE97D006B8453 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5EB45D641D9AE9C6006B8453 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5EB45D661D9AE9D8006B8453 /* MovieProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieProfileViewController.swift; sourceTree = "<group>"; };
+		5ED301911D9C17A900260A23 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		5EFBBB381D947947002D2C7C /* Simpson_CodepathProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simpson_CodepathProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EFBBB3B1D947947002D2C7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5EFBBB3D1D947947002D2C7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5EFBBB421D947947002D2C7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EFBBB451D947947002D2C7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EFBBB471D947947002D2C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +86,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5EB45D681D9AE9E7006B8453 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				5EFBBB3B1D947947002D2C7C /* AppDelegate.swift */,
+				5E960C301D94820000D2B77D /* Common.swift */,
+			);
+			name = Admin;
+			sourceTree = "<group>";
+		};
+		5EB45D691D9AE9F7006B8453 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				5ED301911D9C17A900260A23 /* SearchCollectionViewCell.swift */,
+				5EB45D601D9AE43F006B8453 /* FeedViewController.swift */,
+				5EA3D9B21D9A014B008F3810 /* MainViewController.swift */,
+				5EB45D661D9AE9D8006B8453 /* MovieProfileViewController.swift */,
+				5EB45D641D9AE9C6006B8453 /* ProfileViewController.swift */,
+				5EB45D621D9AE97D006B8453 /* SearchViewController.swift */,
+			);
+			name = Swift;
+			sourceTree = "<group>";
+		};
 		5EFBBB2F1D947947002D2C7C = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +131,12 @@
 		5EFBBB3A1D947947002D2C7C /* Simpson_CodepathProject */ = {
 			isa = PBXGroup;
 			children = (
-				5EFBBB3B1D947947002D2C7C /* AppDelegate.swift */,
-				5EFBBB3D1D947947002D2C7C /* ViewController.swift */,
-				5E960C301D94820000D2B77D /* Common.swift */,
+				5EB45D681D9AE9E7006B8453 /* Admin */,
+				5EB45D691D9AE9F7006B8453 /* Swift */,
+				5EA3D9B01D9A00A5008F3810 /* Main.storyboard */,
 				5EFBBB421D947947002D2C7C /* Assets.xcassets */,
 				5EFBBB441D947947002D2C7C /* LaunchScreen.storyboard */,
 				5EFBBB471D947947002D2C7C /* Info.plist */,
-				5EA3D9B01D9A00A5008F3810 /* Main.storyboard */,
-				5EA3D9B21D9A014B008F3810 /* MainViewController.swift */,
 			);
 			path = Simpson_CodepathProject;
 			sourceTree = "<group>";
@@ -262,9 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EFBBB3E1D947947002D2C7C /* ViewController.swift in Sources */,
+				5EB45D651D9AE9C6006B8453 /* ProfileViewController.swift in Sources */,
+				5EB45D631D9AE97D006B8453 /* SearchViewController.swift in Sources */,
 				5E960C311D94820000D2B77D /* Common.swift in Sources */,
+				5EB45D611D9AE43F006B8453 /* FeedViewController.swift in Sources */,
 				5EFBBB3C1D947947002D2C7C /* AppDelegate.swift in Sources */,
+				5EB45D671D9AE9D8006B8453 /* MovieProfileViewController.swift in Sources */,
+				5ED301921D9C17A900260A23 /* SearchCollectionViewCell.swift in Sources */,
 				5EA3D9B31D9A014B008F3810 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
