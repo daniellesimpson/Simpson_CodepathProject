@@ -77,6 +77,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
 
+    
     func makeCall() {
         print("Call Made")
         _ = ["content-type": "application/json"]
@@ -113,9 +114,20 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
                 self.tempResults.append(movie)
                 //self.searchCollectionView.reloadData()
                 print("reload data")
+                let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+                    // do some task
+                    print("First Task")
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.searchCollectionView.reloadData()
+                        print("did the collectionview reload")
+                    }
+                }
             }
             print("for loop done")
-            self.searchCollectionView.reloadData()
+            //self.searchCollectionView.reloadData()
+           
+            
             
             
         }.resume()
