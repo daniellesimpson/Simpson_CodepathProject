@@ -55,25 +55,30 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("Number of items")
         return tempResults.count
         
     }
     
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
+        print("cell for item")
         let cell = searchCollectionView.dequeueReusableCellWithReuseIdentifier("searchCell", forIndexPath: indexPath) as! SearchCollectionViewCell
-        
+        print("use identifier")
         let newResult = tempResults[indexPath.row]
-        
+        print(newResult.movieTitle)
+        print(newResult.imageURL)
         cell.movieTitleLabel.text = newResult.movieTitle
         cell.searchMoviePoster.image = UIImage(data: newResult.imageData)
+        
+       
         
         return cell
     }
     
 
     func makeCall() {
+        print("Call Made")
         _ = ["content-type": "application/json"]
         let parameters = []
         
@@ -87,26 +92,35 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
             print("FAIL")
         }
         
+        print("Caught")
+        
         let url = NSURL(string: searchMovieApi!)
         
         NSURLSession.sharedSession().dataTaskWithURL(url!) { (data, response, error) in
+            print("NSURL Session")
             
             if error != nil {
                 print(error)
                 return
             }
-            
+            print("myDictionary")
             let myDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: [])
             let dict = myDictionary as! [String : AnyObject]
             let holder = dict["results"] as! [[String : AnyObject]]
-            
+            print("For loop")
             for index in holder {
                 let movie = Movies(result: index)
                 self.tempResults.append(movie)
                 self.searchCollectionView.reloadData()
+                print("reload data")
             }
+            print("for loop done")
+            //self.searchCollectionView.reloadData()
+            
             
         }.resume()
+        
+        print("resume")
     }
     
 
@@ -117,6 +131,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         let textInput = mySearchTextfield.text! as String
         searchText = textInput.stringByReplacingOccurrencesOfString(" ", withString: "%20")
         searchMovieApi = (myApi + searchText)
+        print("Make Call")
         makeCall()
         
 

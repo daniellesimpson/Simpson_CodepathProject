@@ -22,9 +22,10 @@ struct Movies {
         self.imageURL = NSURL(string: "https://image.tmdb.org/t/p/w500\(self.imagePath)")
         self.imageData = NSData(contentsOfURL: self.imageURL)
         
-        print(movieTitle)
-        print(imagePath)
-        print(imageURL)
+//        print(movieTitle)
+//        print(imagePath)
+//        print(imageURL)
+        
     }
 
 
