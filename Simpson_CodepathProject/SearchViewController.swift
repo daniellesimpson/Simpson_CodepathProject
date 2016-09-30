@@ -136,6 +136,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
 
     
     @IBAction func searchNow(sender: AnyObject) {
+        tempResults.removeAll()
         searchCollectionView.reloadData()
         view.endEditing(true)
         let textInput = mySearchTextfield.text! as String
