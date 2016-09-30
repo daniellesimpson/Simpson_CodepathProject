@@ -10,6 +10,12 @@ import UIKit
 
 class MovieProfileViewController: UIViewController {
 
+
+    @IBOutlet weak var myPoster: UIImageView!
+    @IBOutlet weak var myTitle: UILabel!
+    @IBOutlet weak var myDate: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

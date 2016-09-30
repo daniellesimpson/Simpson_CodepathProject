@@ -14,21 +14,15 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     @IBOutlet weak var searchCollectionView: UICollectionView!
     
-    //var myMovies: [NSDictionary]! = []
-    //var tempResults: [[String : AnyObject]] = []
-    
-    //var originalTitle = "title"
-    //var posterPath = "poster_path"
-    //var moviePosterPath: String!
-    //var imageUrl: NSURL!
-    //var imageData: NSData!
-    
     @IBOutlet weak var mySearchTextfield: UITextField!
     var searchText: String!
     var myApi = "https://api.themoviedb.org/3/search/movie?api_key=ced1b9e67f9f9c305424201cdfaa3532&language=en-US&query="
     var searchMovieApi: String!
     
     var tempResults = [Movies]()
+    var cellMovieTitle: String!
+    var cellMoviePoster: UIImage!
+    var cellMovieYear: String!
 
     
 
@@ -47,7 +41,6 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         searchCollectionView.delegate = self
         searchCollectionView.backgroundColor = UIColorFromRGB(0xE2E3E4)
         SearchCollectionViewCell.appearance().backgroundColor = UIColorFromRGB(0xffffff)
-
         
     }
     
@@ -55,31 +48,42 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("Number of items")
         return tempResults.count
         
     }
     
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        print("cell for item")
         let cell = searchCollectionView.dequeueReusableCellWithReuseIdentifier("searchCell", forIndexPath: indexPath) as! SearchCollectionViewCell
-        print("use identifier")
         let newResult = tempResults[indexPath.row]
-        print(newResult.movieTitle)
-        print(newResult.imageURL)
         cell.movieTitleLabel.text = newResult.movieTitle
+        
+        if newResult.imagePath != ""{
         cell.searchMoviePoster.image = UIImage(data: newResult.imageData)
-        
-       
-        
+        }
+        else {
+            cell.searchMoviePoster.image = UIImage(named: "noPoster.jpg")
+        }
         return cell
     }
-    
 
+    func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
+        let newResult = tempResults[indexPath.row]
+        cellMovieTitle = newResult.movieTitle
+        cellMovieYear = newResult.movieReleaseYear
+        
+        if (newResult.imageData == nil) {
+            cellMoviePoster = UIImage(named: "noPoster.jpg")
+        }
+        else {
+            cellMoviePoster = UIImage(data: newResult.imageData)
+        }
+        
+
+    }
+    
     
     func makeCall() {
-        print("Call Made")
         _ = ["content-type": "application/json"]
         let parameters = []
         
@@ -93,61 +97,51 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
             print("FAIL")
         }
         
-        print("Caught")
         
         let url = NSURL(string: searchMovieApi!)
         
         NSURLSession.sharedSession().dataTaskWithURL(url!) { (data, response, error) in
-            print("NSURL Session")
             
             if error != nil {
                 print(error)
                 return
             }
-            print("myDictionary")
+            
             let myDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: [])
             let dict = myDictionary as! [String : AnyObject]
             let holder = dict["results"] as! [[String : AnyObject]]
-            print("For loop")
+
             for index in holder {
                 let movie = Movies(result: index)
                 self.tempResults.append(movie)
-                //self.searchCollectionView.reloadData()
-                print("reload data")
+                
                 let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
                 dispatch_async(dispatch_get_global_queue(priority, 0)) {
-                    // do some task
-                    print("First Task")
                     dispatch_async(dispatch_get_main_queue()) {
+                        
                         self.searchCollectionView.reloadData()
-                        print("did the collectionview reload")
                     }
                 }
             }
-            print("for loop done")
-            //self.searchCollectionView.reloadData()
-           
-            
-            
             
         }.resume()
-        
-        print("resume")
     }
     
 
 
     
     @IBAction func searchNow(sender: AnyObject) {
-        
+        view.endEditing(true)
         let textInput = mySearchTextfield.text! as String
         searchText = textInput.stringByReplacingOccurrencesOfString(" ", withString: "%20")
         searchMovieApi = (myApi + searchText)
-        print("Make Call")
         makeCall()
         
 
     }
+    
+    
+
 
     
     override func didReceiveMemoryWarning() {
@@ -156,14 +150,31 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        //if segue.identifier == "movieProfile" {
+        let destinationViewController = segue.destinationViewController as! MovieProfileViewController
+        destinationViewController.view.layoutIfNeeded()
+        
+        destinationViewController.myTitle.text = cellMovieTitle
+        destinationViewController.myPoster.image = cellMoviePoster
+        destinationViewController.myDate.text = cellMovieYear
+        print(cellMoviePoster)
+        
+        //}
+        
+        
+        //        if segue.identifier == "movieProfile" {}
+        
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
     }
-    */
+    
 
 }

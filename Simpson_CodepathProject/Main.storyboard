@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cLa-OH-TNR">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="71" width="320" height="497"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BgO-qk-ywq">
                                     <size key="itemSize" width="280" height="79"/>
@@ -59,22 +59,31 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="movieTitleLabel" destination="fGt-qJ-2rM" id="i6t-Vt-6XC"/>
                                             <outlet property="searchMoviePoster" destination="Pdb-xe-bOD" id="EjO-ay-kah"/>
+                                            <segue destination="39J-Fk-b0u" kind="push" id="MWd-e3-pxP"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for movies" textAlignment="natural" minimumFontSize="17" id="2sk-le-Ss5">
-                                <rect key="frame" x="20" y="79" width="280" height="30"/>
+                            <view contentMode="scaleToFill" id="gAS-WN-Ys9">
+                                <rect key="frame" x="0.0" y="64" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
-                                <connections>
-                                    <action selector="searchNow:" destination="HT2-md-Dpf" eventType="primaryActionTriggered" id="UIf-eW-Iag"/>
-                                </connections>
-                            </textField>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for movies" textAlignment="natural" minimumFontSize="17" id="2sk-le-Ss5">
+                                        <rect key="frame" x="20" y="18" width="280" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardAppearance="light" returnKeyType="search"/>
+                                        <connections>
+                                            <action selector="searchNow:" destination="HT2-md-Dpf" eventType="primaryActionTriggered" id="UIf-eW-Iag"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.88627450980392153" green="0.8901960784313725" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.88627450980392153" green="0.8901960784313725" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -91,8 +100,8 @@
         <!--Movie Profile-->
         <scene sceneID="uoK-cf-DO5">
             <objects>
-                <viewController title="Movie Profile" id="39J-Fk-b0u" customClass="MovieProfileViewController" customModule="Simpson_CodepathProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ilJ-HZ-ING">
+                <viewController storyboardIdentifier="MovieProfileViewController" title="Movie Profile" id="39J-Fk-b0u" customClass="MovieProfileViewController" customModule="Simpson_CodepathProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="ilJ-HZ-ING">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -193,10 +202,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="WvQ-oP-FKS"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="myDate" destination="oRR-pl-1jq" id="Jdi-Hb-ABa"/>
+                        <outlet property="myPoster" destination="uGC-t7-CmZ" id="v27-K2-5Cd"/>
+                        <outlet property="myTitle" destination="zTO-0g-WBs" id="HZE-j4-8Ix"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4j5-nM-uF6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2408" y="-317"/>
+            <point key="canvasLocation" x="2308" y="-197"/>
         </scene>
         <!--Popcorn Feed-->
         <scene sceneID="ktr-bc-ljp">
@@ -212,7 +226,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="163" id="dVe-i3-UGa">
-                                        <rect key="frame" x="0.0" y="28" width="283" height="163"/>
+                                        <rect key="frame" x="0.0" y="92" width="283" height="163"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dVe-i3-UGa" id="vjz-Co-Pqu">
                                             <rect key="frame" x="0.0" y="0.0" width="283" height="162.5"/>
