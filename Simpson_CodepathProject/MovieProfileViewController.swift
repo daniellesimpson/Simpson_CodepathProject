@@ -14,6 +14,7 @@ class MovieProfileViewController: UIViewController {
     @IBOutlet weak var myPoster: UIImageView!
     @IBOutlet weak var myTitle: UILabel!
     @IBOutlet weak var myDate: UILabel!
+    @IBOutlet weak var myDescription: UILabel!
     
     
     override func viewDidLoad() {

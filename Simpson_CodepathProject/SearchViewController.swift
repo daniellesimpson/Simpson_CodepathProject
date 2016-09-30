@@ -23,6 +23,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     var cellMovieTitle: String!
     var cellMoviePoster: UIImage!
     var cellMovieYear: String!
+    var cellMovieDescription: String!
 
     
 
@@ -71,6 +72,8 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         let newResult = tempResults[indexPath.row]
         cellMovieTitle = newResult.movieTitle
         cellMovieYear = newResult.movieReleaseYear
+        cellMovieDescription = newResult.movieDescription
+        
         
         if (newResult.imageData == nil) {
             cellMoviePoster = UIImage(named: "noPoster.jpg")
@@ -84,6 +87,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     
     func makeCall() {
+        print("CALL MADE")
         _ = ["content-type": "application/json"]
         let parameters = []
         
@@ -106,11 +110,12 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
                 print(error)
                 return
             }
+            print("NOT AGAIN")
             
             let myDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: [])
             let dict = myDictionary as! [String : AnyObject]
             let holder = dict["results"] as! [[String : AnyObject]]
-
+            
             for index in holder {
                 let movie = Movies(result: index)
                 self.tempResults.append(movie)
@@ -131,6 +136,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
 
     
     @IBAction func searchNow(sender: AnyObject) {
+        searchCollectionView.reloadData()
         view.endEditing(true)
         let textInput = mySearchTextfield.text! as String
         searchText = textInput.stringByReplacingOccurrencesOfString(" ", withString: "%20")
@@ -163,6 +169,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         destinationViewController.myTitle.text = cellMovieTitle
         destinationViewController.myPoster.image = cellMoviePoster
         destinationViewController.myDate.text = cellMovieYear
+        destinationViewController.myDescription.text = cellMovieDescription
         print(cellMoviePoster)
         
         //}

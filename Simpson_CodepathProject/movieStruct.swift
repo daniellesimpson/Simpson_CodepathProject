@@ -21,8 +21,12 @@ struct Movies {
     init (result: [String : AnyObject]) {
         self.movieTitle = result["original_title"] as! String
         self.movieReleaseDate = result["release_date"] as! String
+        self.movieDescription = result["overview"] as! String
+        
+        if movieReleaseDate != "" {
         let index = movieReleaseDate.startIndex.advancedBy(4)
         movieReleaseYear = movieReleaseDate.substringToIndex(index)
+        }
 
         
         if !(result["poster_path"] is NSNull){
