@@ -111,11 +111,11 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
             for index in holder {
                 let movie = Movies(result: index)
                 self.tempResults.append(movie)
-                self.searchCollectionView.reloadData()
+                //self.searchCollectionView.reloadData()
                 print("reload data")
             }
             print("for loop done")
-            //self.searchCollectionView.reloadData()
+            self.searchCollectionView.reloadData()
             
             
         }.resume()
