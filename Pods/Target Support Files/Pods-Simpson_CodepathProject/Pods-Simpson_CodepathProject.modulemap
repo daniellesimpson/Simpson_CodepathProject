@@ -1,0 +1,6 @@
+framework module Pods_Simpson_CodepathProject {
+  umbrella header "Pods-Simpson_CodepathProject-umbrella.h"
+
+  export *
+  module * { export * }
+}

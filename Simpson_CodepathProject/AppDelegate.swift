@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,15 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Color of title
         myNavigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColorFromRGB(0xffffff)]
         
-//        let wordMark = UIImage(named: "wordMark.png")
-//        let imageView = UIImageView(image: wordMark)
-//        UINavigationBar.backgroundImageForBarPosition(imageView)
-//        UINavigationBar.backgroundImageForBarPosition(imageView)
-        
-        //let navBackgroundImage:UIImage! = UIImage(named: "wordMark.png")
-        //UINavigationBar.appearance().setBackgroundImage(navBackgroundImage, forBarMetrics: .Default)
-
-        
+        FIRApp.configure()
         
         return true
         

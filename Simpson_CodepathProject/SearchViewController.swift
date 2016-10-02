@@ -22,7 +22,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     var tempResults = [Movies]()
     var cellMovieTitle: String!
     var cellMoviePoster: UIImage!
-    var cellMovieYear: String!
+    var cellMovieDate: String!
     var cellMovieDescription: String!
 
     
@@ -59,8 +59,8 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         let newResult = tempResults[indexPath.row]
         cell.movieTitleLabel.text = newResult.movieTitle
         
-        if newResult.imagePath != ""{
-        cell.searchMoviePoster.image = UIImage(data: newResult.imageData)
+        if newResult.posterPath != ""{
+        cell.searchMoviePoster.image = UIImage(data: newResult.posterData)
         }
         else {
             cell.searchMoviePoster.image = UIImage(named: "noPoster.jpg")
@@ -71,15 +71,16 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
         let newResult = tempResults[indexPath.row]
         cellMovieTitle = newResult.movieTitle
-        cellMovieYear = newResult.movieReleaseYear
+        //adding the month and year to put in the same text box
+        cellMovieDate = (newResult.movieReleaseMonth + " " + newResult.movieReleaseYear)
         cellMovieDescription = newResult.movieDescription
         
         
-        if (newResult.imageData == nil) {
+        if (newResult.posterData == nil) {
             cellMoviePoster = UIImage(named: "noPoster.jpg")
         }
         else {
-            cellMoviePoster = UIImage(data: newResult.imageData)
+            cellMoviePoster = UIImage(data: newResult.posterData)
         }
         
 
@@ -169,7 +170,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         destinationViewController.myTitle.text = cellMovieTitle
         destinationViewController.myPoster.image = cellMoviePoster
-        destinationViewController.myDate.text = cellMovieYear
+        destinationViewController.myDate.text = cellMovieDate
         destinationViewController.myDescription.text = cellMovieDescription
         print(cellMoviePoster)
         
