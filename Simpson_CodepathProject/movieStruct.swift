@@ -8,6 +8,8 @@
 
 import Foundation
 
+var tempResults = [Movies]()
+
 struct Movies {
     var movieTitle: String!
     var movieImage: NSData!
@@ -17,15 +19,26 @@ struct Movies {
     var imagePath: String!
     var imageURL: NSURL!
     var imageData: NSData!
+    var movieID: NSNumber!
     var movieDescription: String!
     var resultsDate: String!
     var movieReleaseMonth: String!
     var movieReleaseYear: String!
+    
+    
+    init () {
+        self.movieTitle = ""
+        self.resultsDate = ""
+        self.movieDescription = ""
+        self.movieID = 0
+    }
 
     init (result: [String : AnyObject]) {
         self.movieTitle = result["original_title"] as! String
         self.resultsDate = result["release_date"] as! String
         self.movieDescription = result["overview"] as! String
+        self.movieID = result["id"] as! NSNumber
+        
         
         if resultsDate != "" {
             //pull the characters for the month and year
@@ -35,7 +48,8 @@ struct Movies {
             let monthInt = resultsDate[Range(monthStart ..< monthEnd)]
             
             movieReleaseYear = resultsDate.substringToIndex(year)
-            //user changeMonthName to conver the INT to a word.
+            
+            //use changeMonthName to convert the INT to a word.
             movieReleaseMonth = changeMonthName(monthInt)
             
         }
@@ -47,7 +61,7 @@ struct Movies {
         
         if !(result["poster_path"] is NSNull){
             self.posterPath = result["poster_path"] as! String
-            self.posterURL = NSURL(string: "https://image.tmdb.org/t/p/w500\(self.posterPath)")
+            self.posterURL = NSURL(string: "https://image.tmdb.org/t/p/w342\(self.posterPath)")
             self.posterData = NSData(contentsOfURL: self.posterURL)
         }
         else {
@@ -60,7 +74,7 @@ struct Movies {
         
         if !(result["backdrop_path"] is NSNull){
             self.imagePath = result["backdrop_path"] as! String
-            self.imageURL = NSURL(string: "https://image.tmdb.org/t/p/w500\(self.imagePath)")
+            self.imageURL = NSURL(string: "https://image.tmdb.org/t/p/w780\(self.imagePath)")
             self.imageData = NSData(contentsOfURL: self.imageURL)
         }
         else {
@@ -76,13 +90,14 @@ struct Movies {
 
     
 
-    init(movieTitle: String, movieImage: NSData, movieDescription: String, posterPath: String, movieReleaseYear: String ) {
+    init(movieTitle: String, movieImage: NSData, movieDescription: String, posterPath: String, movieReleaseYear: String, movieID: NSNumber ) {
 
         self.movieTitle = movieTitle
         self.movieImage = nil
         self.posterPath = posterPath
         self.movieDescription = movieDescription
         self.movieReleaseYear = movieReleaseYear
+        self.movieID = movieID
 
 }
 

@@ -18,12 +18,15 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     var searchText: String!
     var myApi = "https://api.themoviedb.org/3/search/movie?api_key=ced1b9e67f9f9c305424201cdfaa3532&language=en-US&query="
     var searchMovieApi: String!
-    
-    var tempResults = [Movies]()
     var cellMovieTitle: String!
     var cellMoviePoster: UIImage!
     var cellMovieDate: String!
     var cellMovieDescription: String!
+    var cellMovieBackground: UIImage!
+    var selectedIndex: Int!
+    
+    // global variables are risky, so passing along a movie in it's struct inside a variable is a safe bet
+    var selectedMovie: Movies!
 
     
 
@@ -36,6 +39,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         let navImage = UIImage(named: "wordMark.png")
         navImageView.image = navImage
         navigationItem.titleView = navImageView
+        navigationItem.title = ""
         
         //setting up my collection view, and give the collectionView/cell background colors
         searchCollectionView.dataSource = self
@@ -68,9 +72,44 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         return cell
     }
 
-    func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
+//    func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
+//        selectedIndex = indexPath.row as! Int
+//        
+//        
+//        let newResult = tempResults[indexPath.row]
+//        
+//        cellMovieTitle = newResult.movieTitle
+//        
+//        //adding the month and year to put in the same text box
+//        cellMovieDate = (newResult.movieReleaseMonth + " " + newResult.movieReleaseYear)
+//        cellMovieDescription = newResult.movieDescription
+//        
+//        
+//        if (newResult.posterData == nil) {
+//            cellMoviePoster = UIImage(named: "noPoster.jpg")
+//        }
+//        else {
+//            cellMoviePoster = UIImage(data: newResult.posterData)
+//        }
+//        
+//        
+//        if (newResult.imageData == nil) {
+//            cellMovieBackground = UIImage(named: "noPoster.jpg")
+//        }
+//        else {
+//            cellMovieBackground = UIImage(data: newResult.imageData)
+//        }
+//        
+//        
+//    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let newResult = tempResults[indexPath.row]
+        
+        self.selectedMovie = newResult
+        
         cellMovieTitle = newResult.movieTitle
+        
         //adding the month and year to put in the same text box
         cellMovieDate = (newResult.movieReleaseMonth + " " + newResult.movieReleaseYear)
         cellMovieDescription = newResult.movieDescription
@@ -83,12 +122,20 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
             cellMoviePoster = UIImage(data: newResult.posterData)
         }
         
-
+        
+        if (newResult.imageData == nil) {
+            cellMovieBackground = UIImage(named: "noPoster.jpg")
+        }
+        else {
+            cellMovieBackground = UIImage(data: newResult.imageData)
+        }
+        
+        // Calling this makes any cell able the trigger the segue and reliably pass data
+        performSegueWithIdentifier("movieInfo", sender: self)
     }
     
     
     func makeCall() {
-        print("CALL MADE")
         _ = ["content-type": "application/json"]
         let parameters = []
         
@@ -111,7 +158,6 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
                 print(error)
                 return
             }
-            print("NOT AGAIN")
             
             let myDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: [])
             let dict = myDictionary as! [String : AnyObject]
@@ -119,7 +165,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
             
             for index in holder {
                 let movie = Movies(result: index)
-                self.tempResults.append(movie)
+                tempResults.append(movie)
                 
                 let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
                 dispatch_async(dispatch_get_global_queue(priority, 0)) {
@@ -155,6 +201,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
 
@@ -166,19 +213,9 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         //if segue.identifier == "movieProfile" {
         let destinationViewController = segue.destinationViewController as! MovieProfileViewController
-        destinationViewController.view.layoutIfNeeded()
-        
-        destinationViewController.myTitle.text = cellMovieTitle
-        destinationViewController.myPoster.image = cellMoviePoster
-        destinationViewController.myDate.text = cellMovieDate
-        destinationViewController.myDescription.text = cellMovieDescription
-        print(cellMoviePoster)
-        
-        //}
-        
-        
-        //        if segue.identifier == "movieProfile" {}
-        
+        destinationViewController.viewMovie = selectedMovie
+        destinationViewController.poster = cellMoviePoster
+
         
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

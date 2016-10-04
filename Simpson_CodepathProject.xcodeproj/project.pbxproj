@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2721E3851DA2EFD400553A9A /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC2C7CC1DA2E8870001FF7B /* CheckInViewController.swift */; };
+		2721E3861DA2F2AF00553A9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA3D9B01D9A00A5008F3810 /* Main.storyboard */; };
+		277C45511DA2C8A900B5E343 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 277C45501DA2C8A900B5E343 /* GoogleService-Info.plist */; };
 		4B2AC2EBC4992A5B1E3C2DEE /* Pods_Simpson_CodepathProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF958FB27E008DB76B36B3C /* Pods_Simpson_CodepathProjectUITests.framework */; };
 		587964F99C5AFCF2F7D42B1E /* Pods_Simpson_CodepathProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3998E7D1B1F2F56C05634EBB /* Pods_Simpson_CodepathProjectTests.framework */; };
 		5E8DC1711D9DEB430000489E /* movieStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DC1701D9DEB430000489E /* movieStruct.swift */; };
@@ -17,7 +20,7 @@
 		5EB45D631D9AE97D006B8453 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB45D621D9AE97D006B8453 /* SearchViewController.swift */; };
 		5EB45D651D9AE9C6006B8453 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB45D641D9AE9C6006B8453 /* ProfileViewController.swift */; };
 		5EB45D671D9AE9D8006B8453 /* MovieProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB45D661D9AE9D8006B8453 /* MovieProfileViewController.swift */; };
-		5EBC2D671DA0A20E0000E318 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EBC2D661DA0A20E0000E318 /* GoogleService-Info.plist */; };
+		5EC2C7CD1DA2E8870001FF7B /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC2C7CC1DA2E8870001FF7B /* CheckInViewController.swift */; };
 		5ED301921D9C17A900260A23 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED301911D9C17A900260A23 /* SearchCollectionViewCell.swift */; };
 		5EFBBB3C1D947947002D2C7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFBBB3B1D947947002D2C7C /* AppDelegate.swift */; };
 		5EFBBB431D947947002D2C7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EFBBB421D947947002D2C7C /* Assets.xcassets */; };
@@ -46,16 +49,17 @@
 
 /* Begin PBXFileReference section */
 		0DF958FB27E008DB76B36B3C /* Pods_Simpson_CodepathProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simpson_CodepathProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		277C45501DA2C8A900B5E343 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3998E7D1B1F2F56C05634EBB /* Pods_Simpson_CodepathProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simpson_CodepathProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E8DC1701D9DEB430000489E /* movieStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = movieStruct.swift; sourceTree = "<group>"; };
 		5E960C301D94820000D2B77D /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		5EA3D9B01D9A00A5008F3810 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5EA3D9B01D9A00A5008F3810 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Simpson_CodepathProject/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		5EA3D9B21D9A014B008F3810 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5EB45D601D9AE43F006B8453 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		5EB45D621D9AE97D006B8453 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5EB45D641D9AE9C6006B8453 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5EB45D661D9AE9D8006B8453 /* MovieProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieProfileViewController.swift; sourceTree = "<group>"; };
-		5EBC2D661DA0A20E0000E318 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5EC2C7CC1DA2E8870001FF7B /* CheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		5ED301911D9C17A900260A23 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		5EFBBB381D947947002D2C7C /* Simpson_CodepathProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simpson_CodepathProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EFBBB3B1D947947002D2C7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 				5EB45D601D9AE43F006B8453 /* FeedViewController.swift */,
 				5EA3D9B21D9A014B008F3810 /* MainViewController.swift */,
 				5EB45D661D9AE9D8006B8453 /* MovieProfileViewController.swift */,
+				5EC2C7CC1DA2E8870001FF7B /* CheckInViewController.swift */,
 				5EB45D641D9AE9C6006B8453 /* ProfileViewController.swift */,
 				5EB45D621D9AE97D006B8453 /* SearchViewController.swift */,
 				5E8DC1701D9DEB430000489E /* movieStruct.swift */,
@@ -159,7 +164,7 @@
 				5EFBBB421D947947002D2C7C /* Assets.xcassets */,
 				5EFBBB441D947947002D2C7C /* LaunchScreen.storyboard */,
 				5EFBBB471D947947002D2C7C /* Info.plist */,
-				5EBC2D661DA0A20E0000E318 /* GoogleService-Info.plist */,
+				277C45501DA2C8A900B5E343 /* GoogleService-Info.plist */,
 			);
 			path = Simpson_CodepathProject;
 			sourceTree = "<group>";
@@ -318,7 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EA3D9B11D9A00A5008F3810 /* Main.storyboard in Resources */,
-				5EBC2D671DA0A20E0000E318 /* GoogleService-Info.plist in Resources */,
+				277C45511DA2C8A900B5E343 /* GoogleService-Info.plist in Resources */,
 				5EFBBB461D947947002D2C7C /* LaunchScreen.storyboard in Resources */,
 				5EFBBB431D947947002D2C7C /* Assets.xcassets in Resources */,
 			);
@@ -328,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2721E3861DA2F2AF00553A9A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +478,7 @@
 				5EB45D631D9AE97D006B8453 /* SearchViewController.swift in Sources */,
 				5E960C311D94820000D2B77D /* Common.swift in Sources */,
 				5EB45D611D9AE43F006B8453 /* FeedViewController.swift in Sources */,
+				5EC2C7CD1DA2E8870001FF7B /* CheckInViewController.swift in Sources */,
 				5EFBBB3C1D947947002D2C7C /* AppDelegate.swift in Sources */,
 				5EB45D671D9AE9D8006B8453 /* MovieProfileViewController.swift in Sources */,
 				5ED301921D9C17A900260A23 /* SearchCollectionViewCell.swift in Sources */,
@@ -484,6 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2721E3851DA2EFD400553A9A /* CheckInViewController.swift in Sources */,
 				5EFBBB511D947947002D2C7C /* Simpson_CodepathProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
