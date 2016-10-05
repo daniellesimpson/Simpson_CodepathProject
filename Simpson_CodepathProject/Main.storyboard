@@ -52,25 +52,25 @@
                                 <rect key="frame" x="0.0" y="71" width="320" height="497"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BgO-qk-ywq">
-                                    <size key="itemSize" width="280" height="79"/>
+                                    <size key="itemSize" width="280" height="92"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="searchCell" id="Ah3-eu-XxV" customClass="SearchCollectionViewCell" customModule="Simpson_CodepathProject" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="64" width="280" height="79"/>
+                                        <rect key="frame" x="20" y="64" width="280" height="92"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Pdb-xe-bOD">
-                                                    <rect key="frame" x="8" y="4" width="50" height="71"/>
+                                                    <rect key="frame" x="8" y="10" width="50" height="71"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fGt-qJ-2rM">
-                                                    <rect key="frame" x="73" y="8" width="177" height="64"/>
+                                                    <rect key="frame" x="73" y="14" width="177" height="41"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -193,13 +193,6 @@
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.56470588235294117" green="0.59607843137254901" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interstellar" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" id="zTO-0g-WBs" userLabel="MovieTitle">
-                                                        <rect key="frame" x="127" y="-7" width="185" height="48"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TeP-KN-UF9">
                                                         <rect key="frame" x="127" y="183" width="76" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -212,6 +205,13 @@
                                                             <action selector="didPressCheckIn:" destination="39J-Fk-b0u" eventType="touchUpInside" id="5No-Jv-g1c"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interstellar" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" id="zTO-0g-WBs" userLabel="MovieTitle">
+                                                        <rect key="frame" x="127" y="-7" width="185" height="48"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                             </view>
                                         </subviews>
@@ -321,22 +321,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="163" sectionHeaderHeight="28" sectionFooterHeight="28" id="UgU-ql-9wK">
-                                <rect key="frame" x="19" y="75" width="283" height="417"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="184" sectionHeaderHeight="28" sectionFooterHeight="28" id="UgU-ql-9wK">
+                                <rect key="frame" x="19" y="39" width="283" height="529"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="163" id="dVe-i3-UGa" customClass="FeedTableViewCell" customModule="Simpson_CodepathProject">
-                                        <rect key="frame" x="0.0" y="92" width="283" height="163"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="feedCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="184" id="dVe-i3-UGa" customClass="FeedTableViewCell" customModule="Simpson_CodepathProject">
+                                        <rect key="frame" x="0.0" y="28" width="283" height="184"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dVe-i3-UGa" id="vjz-Co-Pqu">
-                                            <rect key="frame" x="0.0" y="0.0" width="283" height="162.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="283" height="183.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Interstellar-1" id="Q1T-fu-aLH" userLabel="movie_background">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mermaid" id="Q1T-fu-aLH" userLabel="movie_background">
                                                     <rect key="frame" x="0.0" y="0.0" width="283" height="163"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" id="AIj-G6-eUQ">
+                                                    <rect key="frame" x="0.0" y="52" width="283" height="111"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="hdb-Ti-Y1L" userLabel="profile_photo">
                                                     <rect key="frame" x="8" y="124" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -362,18 +366,17 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" id="AIj-G6-eUQ">
-                                                    <rect key="frame" x="3" y="52" width="280" height="111"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </view>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.8862745098" green="0.89019607840000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.8862745098" green="0.89019607840000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="friendName" destination="Eb5-Gq-3si" id="TcJ-b7-nZ0"/>
                                             <outlet property="movieBackground" destination="Q1T-fu-aLH" id="hGX-Aw-GO2"/>
                                             <outlet property="movieTitle" destination="acc-1V-TKf" id="Oxy-aj-5xr"/>
-                                            <outlet property="myGradientHolder" destination="AIj-G6-eUQ" id="KBW-si-dX3"/>
+                                            <outlet property="myGradientHolder" destination="AIj-G6-eUQ" id="j48-b3-Uau"/>
                                             <outlet property="profilePhoto" destination="hdb-Ti-Y1L" id="2Vo-gL-Cgj"/>
+                                            <outlet property="timeWatched" destination="hef-2I-NY7" id="r4w-PF-ZCs"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -8,15 +8,28 @@
 
 import UIKit
 
+struct myInstragramImage {
+    let image: UIImage
+    let username: String
+    let profilePic: UIImage
+    let movieTitle: String
+    let time: String
+}
+
+var myObjects = [(image: UIImage(named: "Mermaid.png")!, username: "adeylady123", movieTitle:"The Little Mermaid", profilePic: UIImage(named: "Madison.png")!, time: "2 hours ago"),
+                 (image: UIImage(named: "Avengers.png")!, username: "danielleSimpson", movieTitle:"Avengers", profilePic: UIImage(named: "Katherine.png")!, time: "3 hours ago"),
+                 (image: UIImage(named: "Interstellar-1.png")!, username: "RaviG_007", movieTitle:"Interstellar", profilePic: UIImage(named: "Danielle.png")!, time: "yesterday"),
+                 (image: UIImage(named: "rudolph.jpg")!, username: "Isabella22", movieTitle:"Rudolph The Red Nose Reindeer", profilePic: UIImage(named: "Dustin.png")!, time: "yesterday"),
+                 (image: UIImage(named: "AmericanReunion.jpg")!, username: "BobbySmith85", movieTitle:"American Reunion", profilePic: UIImage(named: "Adey.png")!, time: "Last Week"),
+                 (image: UIImage(named: "StarWars.jpg")!, username: "Elwood", movieTitle:"Star Wars", profilePic: UIImage(named: "Mermaid.png")!, time: "Last Month")]
+
 @IBDesignable class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var feedTableView: UITableView!
-
-    var myGradient = CAGradientLayer()
-    let gradientTop = UIColorFromRGB(0x000000).colorWithAlphaComponent(1)
-    let gradientBottom = UIColor.blackColor().CGColor
-    var myMovies = ["Mean Girls","Annie","Avengers"]
-    var myUsers = ["Danielle","Adey","Ravi"]
+    @IBOutlet weak var myGradientHolder: UIView!
+    var myMovies: [String]!
+    var myUsers: [String]!
+    var myBackgrounds: [UIImage]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,48 +43,35 @@ import UIKit
         let navImage = UIImage(named: "wordMark.png")
         navImageView.image = navImage
         navigationItem.titleView = navImageView
-
-        //myFeedView.backgroundColor = UIColorFromRGB(0xE2E3E4)
-        
-        myMovies = ["Mean Girls","Annie","Avengers"]
-        myUsers = ["Danielle","Adey","Ravi"]
         
     }
 
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myUsers.count
+        return myObjects.count
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let index = indexPath.row
         let cell = feedTableView.dequeueReusableCellWithIdentifier("feedCell") as! FeedTableViewCell
-        cell.movieTitle.text = myMovies[index]
-        cell.friendName.text = myUsers[index]
-//        cell.myGradient.colors = [gradientTop, gradientBottom]
-//        myGradient.frame = cell.myGradientHolder.frame
-//        myGradient.locations = [0.0, 0.8]
-//        cell.myGradientHolder.layer.insertSublayer(myGradient, atIndex: 3)
-//        
-//        print("🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮")
+        
+        cell.movieTitle.text = myObjects[index].movieTitle
+        cell.friendName.text = myObjects[index].username + " watched"
+        cell.movieBackground.image = myObjects[index].image
+        cell.timeWatched.text = myObjects[index].time
+        cell.profilePhoto.image = myObjects[index].profilePic
+        
+        
+        print("🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮")
+        cell.setUpGradient()
+        cell.bringSubviewToFront(cell.movieTitle)
+        
         
         return cell
         
     }
     
-    
-    func setUpGradient() {
-        
-        let gradientTop = UIColorFromRGB(0x000000).colorWithAlphaComponent(1)
-        let gradientBottom = UIColor.blackColor().CGColor
-        
-        myGradient.colors = [gradientTop, gradientBottom]
-        //myGradient.frame = myGradientHolder.frame
-        myGradient.locations = [0.0, 0.8]
-        //cell.myGradientHolder.layer.insertSublayer(myGradient, atIndex: 3)
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

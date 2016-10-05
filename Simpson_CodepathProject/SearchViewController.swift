@@ -68,6 +68,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
         
         //print(tempResults)
+        
         return cell
     }
 
@@ -100,6 +101,8 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
         
         // Calling this makes any cell able the trigger the segue and reliably pass data
+        
+        
         performSegueWithIdentifier("movieInfo", sender: self)
         
         
@@ -185,6 +188,8 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         destinationViewController.viewMovie = selectedMovie
         destinationViewController.poster = cellMoviePoster
         destinationViewController.background = cellMovieBackground
+        
+        
         
 
         

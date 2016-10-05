@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        var myNavigationBarAppearance = UINavigationBar.appearance()
+        let myNavigationBarAppearance = UINavigationBar.appearance()
         //Background Color
         UINavigationBar.appearance().barTintColor = UIColorFromRGB(0xe53725)
         //color of arrow/text

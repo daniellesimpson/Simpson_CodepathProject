@@ -126,13 +126,13 @@
 			isa = PBXGroup;
 			children = (
 				5ED301911D9C17A900260A23 /* SearchCollectionViewCell.swift */,
+				5EB45D621D9AE97D006B8453 /* SearchViewController.swift */,
 				5EA5F70A1DA538170039B1B3 /* FeedTableViewCell.swift */,
 				5EB45D601D9AE43F006B8453 /* FeedViewController.swift */,
 				5EA3D9B21D9A014B008F3810 /* MainViewController.swift */,
 				5EB45D641D9AE9C6006B8453 /* ProfileViewController.swift */,
 				5EC2C7CC1DA2E8870001FF7B /* CheckInViewController.swift */,
 				5EB45D661D9AE9D8006B8453 /* MovieProfileViewController.swift */,
-				5EB45D621D9AE97D006B8453 /* SearchViewController.swift */,
 				5E8DC1701D9DEB430000489E /* movieStruct.swift */,
 			);
 			name = Swift;
