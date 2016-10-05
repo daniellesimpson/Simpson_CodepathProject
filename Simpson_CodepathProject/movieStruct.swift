@@ -9,8 +9,6 @@
 import Foundation
 
 var tempResults = [Movies]()
-//var Danielle: [String]()
-
 
 struct Movies {
     var username: String!

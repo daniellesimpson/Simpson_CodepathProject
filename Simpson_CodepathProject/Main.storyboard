@@ -326,11 +326,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="163" id="dVe-i3-UGa" customClass="FeedTableViewCell" customModule="Simpson_CodepathProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="283" height="163"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="163" id="dVe-i3-UGa" customClass="FeedTableViewCell" customModule="Simpson_CodepathProject">
+                                        <rect key="frame" x="0.0" y="92" width="283" height="163"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dVe-i3-UGa" id="vjz-Co-Pqu">
-                                            <rect key="frame" x="0.0" y="0.0" width="283" height="163"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="283" height="162.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Interstellar-1" id="Q1T-fu-aLH" userLabel="movie_background">
@@ -368,6 +368,13 @@
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="friendName" destination="Eb5-Gq-3si" id="TcJ-b7-nZ0"/>
+                                            <outlet property="movieBackground" destination="Q1T-fu-aLH" id="hGX-Aw-GO2"/>
+                                            <outlet property="movieTitle" destination="acc-1V-TKf" id="Oxy-aj-5xr"/>
+                                            <outlet property="myGradientHolder" destination="AIj-G6-eUQ" id="KBW-si-dX3"/>
+                                            <outlet property="profilePhoto" destination="hdb-Ti-Y1L" id="2Vo-gL-Cgj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -375,6 +382,9 @@
                         <color key="backgroundColor" red="0.88627450980392153" green="0.8901960784313725" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Popcorn Feed" id="Jsi-52-HaK"/>
+                    <connections>
+                        <outlet property="feedTableView" destination="UgU-ql-9wK" id="UMr-Ky-S4x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dc4-Bm-Tof" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -518,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HEc-ss-MVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1778" y="-872"/>
+            <point key="canvasLocation" x="1765" y="-1176"/>
         </scene>
         <!--Friends Feed-->
         <scene sceneID="cP2-R7-uGm">
@@ -532,7 +542,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="sPy-Ip-47d" kind="relationship" relationship="rootViewController" id="M8T-rT-rDc"/>
+                        <segue destination="3SF-y8-bww" kind="relationship" relationship="rootViewController" id="UzX-ab-pdz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sd3-YZ-nUQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

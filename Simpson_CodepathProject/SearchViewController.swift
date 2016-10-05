@@ -66,6 +66,8 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         else {
             cell.searchMoviePoster.image = UIImage(named: "noPoster.jpg")
         }
+        
+        //print(tempResults)
         return cell
     }
 
@@ -99,6 +101,8 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         // Calling this makes any cell able the trigger the segue and reliably pass data
         performSegueWithIdentifier("movieInfo", sender: self)
+        
+        
     }
     
     
@@ -157,6 +161,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         searchText = textInput.stringByReplacingOccurrencesOfString(" ", withString: "%20")
         searchMovieApi = (myApi + searchText)
         makeCall()
+        
         
 
     }
