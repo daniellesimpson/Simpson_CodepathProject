@@ -45,6 +45,7 @@ class MainViewController: UIViewController {
         myProfileNav = UINavigationController(rootViewController: myProfileVC)
         
          myContainerView.addSubview(popcornNav.view)
+        myPopcornBtn.selected = true
         
 
         // Do any additional setup after loading the view.
@@ -52,15 +53,25 @@ class MainViewController: UIViewController {
 
     @IBAction func didPressFeed(sender: AnyObject) {
         myContainerView.addSubview(feedNav.view)
+        myFeedBtn.selected = true
+        myPopcornBtn.selected = false
+        myProfileBtn.selected = false
         
     }
     
     @IBAction func didPressPopcorn(sender: AnyObject) {
         myContainerView.addSubview(popcornNav.view)
+        myFeedBtn.selected = false
+        myPopcornBtn.selected = true
+        myProfileBtn.selected = false
+        
     }
     
     @IBAction func didPressProfile(sender: AnyObject) {
         myContainerView.addSubview(myProfileNav.view)
+        myFeedBtn.selected = false
+        myPopcornBtn.selected = false
+        myProfileBtn.selected = true
     }
     
     

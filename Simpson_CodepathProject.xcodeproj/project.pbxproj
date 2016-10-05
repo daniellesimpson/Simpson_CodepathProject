@@ -16,6 +16,8 @@
 		5E960C311D94820000D2B77D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E960C301D94820000D2B77D /* Common.swift */; };
 		5EA3D9B11D9A00A5008F3810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA3D9B01D9A00A5008F3810 /* Main.storyboard */; };
 		5EA3D9B31D9A014B008F3810 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3D9B21D9A014B008F3810 /* MainViewController.swift */; };
+		5EA5F7091DA46D3B0039B1B3 /* myUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5F7081DA46D3B0039B1B3 /* myUsers.swift */; };
+		5EA5F70B1DA538170039B1B3 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5F70A1DA538170039B1B3 /* FeedTableViewCell.swift */; };
 		5EB45D611D9AE43F006B8453 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB45D601D9AE43F006B8453 /* FeedViewController.swift */; };
 		5EB45D631D9AE97D006B8453 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB45D621D9AE97D006B8453 /* SearchViewController.swift */; };
 		5EB45D651D9AE9C6006B8453 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB45D641D9AE9C6006B8453 /* ProfileViewController.swift */; };
@@ -55,6 +57,8 @@
 		5E960C301D94820000D2B77D /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		5EA3D9B01D9A00A5008F3810 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Simpson_CodepathProject/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		5EA3D9B21D9A014B008F3810 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5EA5F7081DA46D3B0039B1B3 /* myUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myUsers.swift; sourceTree = "<group>"; };
+		5EA5F70A1DA538170039B1B3 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		5EB45D601D9AE43F006B8453 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		5EB45D621D9AE97D006B8453 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5EB45D641D9AE9C6006B8453 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -122,11 +126,12 @@
 			isa = PBXGroup;
 			children = (
 				5ED301911D9C17A900260A23 /* SearchCollectionViewCell.swift */,
+				5EA5F70A1DA538170039B1B3 /* FeedTableViewCell.swift */,
 				5EB45D601D9AE43F006B8453 /* FeedViewController.swift */,
 				5EA3D9B21D9A014B008F3810 /* MainViewController.swift */,
-				5EB45D661D9AE9D8006B8453 /* MovieProfileViewController.swift */,
-				5EC2C7CC1DA2E8870001FF7B /* CheckInViewController.swift */,
 				5EB45D641D9AE9C6006B8453 /* ProfileViewController.swift */,
+				5EC2C7CC1DA2E8870001FF7B /* CheckInViewController.swift */,
+				5EB45D661D9AE9D8006B8453 /* MovieProfileViewController.swift */,
 				5EB45D621D9AE97D006B8453 /* SearchViewController.swift */,
 				5E8DC1701D9DEB430000489E /* movieStruct.swift */,
 			);
@@ -161,6 +166,7 @@
 				5EB45D681D9AE9E7006B8453 /* Admin */,
 				5EB45D691D9AE9F7006B8453 /* Swift */,
 				5EA3D9B01D9A00A5008F3810 /* Main.storyboard */,
+				5EA5F7081DA46D3B0039B1B3 /* myUsers.swift */,
 				5EFBBB421D947947002D2C7C /* Assets.xcassets */,
 				5EFBBB441D947947002D2C7C /* LaunchScreen.storyboard */,
 				5EFBBB471D947947002D2C7C /* Info.plist */,
@@ -475,9 +481,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EB45D651D9AE9C6006B8453 /* ProfileViewController.swift in Sources */,
+				5EA5F70B1DA538170039B1B3 /* FeedTableViewCell.swift in Sources */,
 				5EB45D631D9AE97D006B8453 /* SearchViewController.swift in Sources */,
 				5E960C311D94820000D2B77D /* Common.swift in Sources */,
 				5EB45D611D9AE43F006B8453 /* FeedViewController.swift in Sources */,
+				5EA5F7091DA46D3B0039B1B3 /* myUsers.swift in Sources */,
 				5EC2C7CD1DA2E8870001FF7B /* CheckInViewController.swift in Sources */,
 				5EFBBB3C1D947947002D2C7C /* AppDelegate.swift in Sources */,
 				5EB45D671D9AE9D8006B8453 /* MovieProfileViewController.swift in Sources */,

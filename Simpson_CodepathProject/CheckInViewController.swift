@@ -10,28 +10,33 @@ import UIKit
 
 class CheckInViewController: UIViewController {
     
+    var checkInMovie: Movies?
+    
     @IBOutlet weak var myTitle: UILabel!
     @IBOutlet weak var myDate: UILabel!
     @IBOutlet weak var myImage: UIImageView!
     @IBOutlet weak var confirmBTN: UIButton!
     
-    
-    var checkInMovie: Movies?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //myTitle.text = movieSelected?.movieTitle
+        myTitle.text = (checkInMovie?.movieTitle)!
+        myDate.text = (checkInMovie?.movieRelease)!
+        myImage.image = UIImage(data: (checkInMovie?.imageData)!)
         
         
+        print((checkInMovie?.movieTitle)!)
         
         //adding the logo to the NavBar
-        let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 30))
+        let navImageView = UIImageView(frame: CGRect(x: -200, y: 0, width: 20, height: 30))
         navImageView.contentMode = .ScaleAspectFit
         let navImage = UIImage(named: "wordMark.png")
         navImageView.image = navImage
         navigationItem.titleView = navImageView
         navigationItem.title = ""
+        
+//        var logoImage:UIImage = UIImage(named: "wordMark.png")!
+//        self.navigationItem.titleView = UIImageView(image: logoImage)
         
     }
     

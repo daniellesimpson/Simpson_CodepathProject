@@ -9,8 +9,17 @@
 import Foundation
 
 var tempResults = [Movies]()
+//var Danielle: [String]()
+
 
 struct Movies {
+    var username: String!
+    var checkinDate: NSDate!
+    var profilePic: NSData!
+    var profileURL: NSURL!
+    
+    
+    
     var movieTitle: String!
     var movieImage: NSData!
     var posterPath: String!
@@ -24,6 +33,8 @@ struct Movies {
     var resultsDate: String!
     var movieReleaseMonth: String!
     var movieReleaseYear: String!
+    var movieRelease: String!
+    
     
     
     init () {
@@ -31,6 +42,9 @@ struct Movies {
         self.resultsDate = ""
         self.movieDescription = ""
         self.movieID = 0
+        self.username = "daniellesimpson"
+        self.profileURL = NSURL(string: "https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/400757_10151634193836202_1576235758_n.jpg?oh=236a3a49090115afe629821566096495&oe=58AAF1F3")
+        self.profilePic = NSData(contentsOfURL: self.profileURL)
     }
 
     init (result: [String : AnyObject]) {
@@ -51,6 +65,8 @@ struct Movies {
             
             //use changeMonthName to convert the INT to a word.
             movieReleaseMonth = changeMonthName(monthInt)
+            
+            movieRelease = movieReleaseMonth + " " + movieReleaseYear
             
         }
         else {

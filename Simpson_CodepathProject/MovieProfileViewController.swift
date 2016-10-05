@@ -19,6 +19,7 @@ class MovieProfileViewController: UIViewController {
     
     var viewMovie: Movies?
     var poster = UIImage()
+    var background = UIImage()
 
 
     
@@ -27,7 +28,7 @@ class MovieProfileViewController: UIViewController {
 
         //adding the logo to the NavBar
         let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 30))
-        navImageView.contentMode = .ScaleAspectFit
+        navImageView.contentMode = .Center
         let navImage = UIImage(named: "wordMark.png")
         navImageView.image = navImage
         navigationItem.titleView = navImageView
@@ -36,10 +37,11 @@ class MovieProfileViewController: UIViewController {
         
         
         // Loading variables here vs in prepare for segue is much more reliable
-        myDate.text = (viewMovie?.movieReleaseMonth)! + " " + (viewMovie?.movieReleaseYear)!
+        myDate.text = (viewMovie?.movieRelease)!
         myTitle.text = (viewMovie?.movieTitle)!
         myDescription.text = (viewMovie?.movieDescription)!
         myPoster.image = poster
+        myBackgroundImage.image = background
         
         //print(viewMovie?.movieTitle)
         print(viewMovie?.movieTitle)
@@ -71,6 +73,7 @@ class MovieProfileViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destinationViewController = segue.destinationViewController as! CheckInViewController
         destinationViewController.checkInMovie = viewMovie
+        //destinationViewController.myTitle.text = myTitle.text
         
 
         // Get the new view controller using segue.destinationViewController.

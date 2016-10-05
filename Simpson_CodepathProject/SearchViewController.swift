@@ -49,9 +49,6 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         
     }
     
-    
-    
-    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tempResults.count
         
@@ -72,36 +69,6 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         return cell
     }
 
-//    func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
-//        selectedIndex = indexPath.row as! Int
-//        
-//        
-//        let newResult = tempResults[indexPath.row]
-//        
-//        cellMovieTitle = newResult.movieTitle
-//        
-//        //adding the month and year to put in the same text box
-//        cellMovieDate = (newResult.movieReleaseMonth + " " + newResult.movieReleaseYear)
-//        cellMovieDescription = newResult.movieDescription
-//        
-//        
-//        if (newResult.posterData == nil) {
-//            cellMoviePoster = UIImage(named: "noPoster.jpg")
-//        }
-//        else {
-//            cellMoviePoster = UIImage(data: newResult.posterData)
-//        }
-//        
-//        
-//        if (newResult.imageData == nil) {
-//            cellMovieBackground = UIImage(named: "noPoster.jpg")
-//        }
-//        else {
-//            cellMovieBackground = UIImage(data: newResult.imageData)
-//        }
-//        
-//        
-//    }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let newResult = tempResults[indexPath.row]
@@ -193,9 +160,6 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         
 
     }
-    
-    
-
 
     
     override func didReceiveMemoryWarning() {
@@ -215,6 +179,8 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         let destinationViewController = segue.destinationViewController as! MovieProfileViewController
         destinationViewController.viewMovie = selectedMovie
         destinationViewController.poster = cellMoviePoster
+        destinationViewController.background = cellMovieBackground
+        
 
         
         // Get the new view controller using segue.destinationViewController.
