@@ -46,10 +46,17 @@ class MainViewController: UIViewController {
         
          myContainerView.addSubview(popcornNav.view)
         myPopcornBtn.selected = true
+        preferredStatusBarStyle()
         
 
         // Do any additional setup after loading the view.
     }
+    
+     override func preferredStatusBarStyle() -> UIStatusBarStyle {
+       return .LightContent
+        
+    }
+    
 
     @IBAction func didPressFeed(sender: AnyObject) {
         myContainerView.addSubview(feedNav.view)

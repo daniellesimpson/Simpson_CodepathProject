@@ -40,12 +40,15 @@ var myObjects = [(image: UIImage(named: "Mermaid.png")!, username: "adeylady123"
         //adding the logo to the NavBar
         let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 120, height: 30))
         navImageView.contentMode = .ScaleAspectFit
-        let navImage = UIImage(named: "wordMark.png")
+        let navImage = UIImage(named: "wordMark_lg2.png")
         navImageView.image = navImage
         navigationItem.titleView = navImageView
+        navigationController?.navigationBar.barTintColor = UIColorFromRGB(0x000000)
+
         
     }
 
+   
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myObjects.count
@@ -55,6 +58,8 @@ var myObjects = [(image: UIImage(named: "Mermaid.png")!, username: "adeylady123"
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let index = indexPath.row
         let cell = feedTableView.dequeueReusableCellWithIdentifier("feedCell") as! FeedTableViewCell
+        
+        cell.profilePhoto.layer.cornerRadius = cell.profilePhoto.frame.height / 2
         
         cell.movieTitle.text = myObjects[index].movieTitle
         cell.friendName.text = myObjects[index].username + " watched"

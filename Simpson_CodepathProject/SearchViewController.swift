@@ -25,6 +25,11 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     var cellMovieBackground: UIImage!
     var selectedIndex: Int!
     
+
+    @IBOutlet weak var searchLogo: UIView!
+    
+    
+    
     // global variables are risky, so passing along a movie in it's struct inside a variable is a safe bet
     var selectedMovie: Movies!
 
@@ -34,20 +39,25 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         super.viewDidLoad()
 
         //adding the logo to the NavBar
-        let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 30))
+        let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 120, height: 30))
         navImageView.contentMode = .ScaleAspectFit
-        let navImage = UIImage(named: "wordMark.png")
+        let navImage = UIImage(named: "wordMark_lg2")
         navImageView.image = navImage
         navigationItem.titleView = navImageView
+        navigationController?.navigationBar.barTintColor = UIColorFromRGB(0xe53725)
         navigationItem.title = ""
+        
+    
+        
         
         //setting up my collection view, and give the collectionView/cell background colors
         searchCollectionView.dataSource = self
         searchCollectionView.delegate = self
-        searchCollectionView.backgroundColor = UIColorFromRGB(0xE2E3E4)
+        searchCollectionView.backgroundColor = UIColorFromRGB(0x000000)
         SearchCollectionViewCell.appearance().backgroundColor = UIColorFromRGB(0xffffff)
         
     }
+
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tempResults.count
@@ -164,6 +174,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         searchText = textInput.stringByReplacingOccurrencesOfString(" ", withString: "%20")
         searchMovieApi = (myApi + searchText)
         makeCall()
+        searchLogo.hidden = true
         
         
 
@@ -188,6 +199,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
         destinationViewController.viewMovie = selectedMovie
         destinationViewController.poster = cellMoviePoster
         destinationViewController.background = cellMovieBackground
+        //destinationViewController.didConfirm = false
         
         
         

@@ -20,19 +20,24 @@ class MovieProfileViewController: UIViewController {
     var viewMovie: Movies?
     var poster = UIImage()
     var background = UIImage()
+    
+    var didConfirm = false
 
+    @IBOutlet weak var checkInBtn: UIButton!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //adding the logo to the NavBar
-        let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 30))
-        navImageView.contentMode = .Center
+        let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 120, height: 30))
+        navImageView.contentMode = .ScaleAspectFit
         let navImage = UIImage(named: "wordMark.png")
         navImageView.image = navImage
         navigationItem.titleView = navImageView
-        navigationItem.title = ""
+        navigationController?.navigationBar.barTintColor = UIColorFromRGB(0xe53725)
+        navigationController?.navigationBar.tintColor = UIColorFromRGB(0xffffff)
+
 
         
         
@@ -46,6 +51,19 @@ class MovieProfileViewController: UIViewController {
         //print(viewMovie?.movieTitle)
         print(viewMovie?.movieTitle)
 
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if checkInBtn.selected == true{
+            checkInBtn.backgroundColor = UIColorFromRGB(0x90989D)
+            checkInBtn.setTitle("Watched", forState: .Normal)
+            checkInBtn.tintColor = UIColorFromRGB(0x90989D)
+            checkInBtn.frame = checkInBtn.frame
+        }
+        else{
+            checkInBtn.backgroundColor = UIColorFromRGB(0x000000)
+        }
     }
 
 

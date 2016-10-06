@@ -17,28 +17,39 @@ class CheckInViewController: UIViewController {
     @IBOutlet weak var myImage: UIImageView!
     @IBOutlet weak var confirmBTN: UIButton!
     
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
+    var movieConfirmed: Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         myTitle.text = (checkInMovie?.movieTitle)!
         myDate.text = (checkInMovie?.movieRelease)!
         myImage.image = UIImage(data: (checkInMovie?.imageData)!)
+        backgroundImage.image = UIImage(data: (checkInMovie?.imageData)!)
         
         
-        print((checkInMovie?.movieTitle)!)
-        
-        //adding the logo to the NavBar
-        let navImageView = UIImageView(frame: CGRect(x: -200, y: 0, width: 20, height: 30))
+        let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 120, height: 30))
         navImageView.contentMode = .ScaleAspectFit
         let navImage = UIImage(named: "wordMark.png")
         navImageView.image = navImage
         navigationItem.titleView = navImageView
-        navigationItem.title = ""
-        
-//        var logoImage:UIImage = UIImage(named: "wordMark.png")!
-//        self.navigationItem.titleView = UIImageView(image: logoImage)
+        navigationController?.navigationBar.barTintColor = UIColorFromRGB(0x000000)
+        navigationController?.navigationBar.tintColor = UIColorFromRGB(0xffffff)
+        //movieConfirmed = false
+
         
     }
+    
+    @IBAction func didConfirmChecking(sender: UIButton) {
+        
+        let myVar = self.navigationController?.viewControllers[1] as! MovieProfileViewController
+        myVar.didConfirm = true
+        myVar.checkInBtn.selected = true
+        print(myVar.didConfirm)
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

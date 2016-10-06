@@ -10,15 +10,20 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var myScrollVIew: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //adding the logo to the NavBar
         let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 120, height: 30))
         navImageView.contentMode = .ScaleAspectFit
-        let navImage = UIImage(named: "wordMark.png")
+        let navImage = UIImage(named: "wordMark_lg2.png")
         navImageView.image = navImage
         navigationItem.titleView = navImageView
+        navigationController?.navigationBar.barTintColor = UIColorFromRGB(0x000000)
+        
+        myScrollVIew.contentSize = CGSizeMake(320,850)
 
     }
 
