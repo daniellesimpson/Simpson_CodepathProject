@@ -56,13 +56,13 @@ class MovieProfileViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         
         if checkInBtn.selected == true{
-            checkInBtn.backgroundColor = UIColorFromRGB(0x90989D)
-            checkInBtn.setTitle("Watched", forState: .Normal)
-            checkInBtn.tintColor = UIColorFromRGB(0x90989D)
-            checkInBtn.frame = checkInBtn.frame
+            checkInBtn.backgroundColor = UIColorFromRGB(0xe53725)
+            checkInBtn.setTitle("Watched", forState: .Selected)
+//            checkInBtn.tintColor = UIColorFromRGB(0x90989D)
+            //checkInBtn.frame = checkInBtn.frame
         }
         else{
-            checkInBtn.backgroundColor = UIColorFromRGB(0x000000)
+            //checkInBtn.backgroundColor = UIColorFromRGB(0x000000)
         }
     }
 
